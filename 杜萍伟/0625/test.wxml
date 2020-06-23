@@ -1,0 +1,49 @@
+<view>
+    <!--选项卡-->
+    <view class="traceability-type">
+        <view class="traceability-type-list">
+            <view wx:for="{{typeList}}"
+                  wx:key="unique"
+                  class="traceability-type-item {{typeChecked === item.value ? 'checked' : ''}}"
+                  data-type="{{item.value}}"
+                  bindtap="changeType">{{item.label}}
+            </view>
+        </view>
+    </view>
+    <!--空数据的时候，显示无数据图片，双层检验，不会发生错误-->
+    <block wx:if="{{ !initPage && traceabilityList.length === 0}}">
+        <view class="list-no-data">
+            <image src="/static/img/no-data.png" mode="widthFix"></image>
+            <view>暂时没有活动哦~</view>
+        </view>
+    </block>
+    <!--list页面-->
+    <block wx:else>
+        <view class="traceability-list">
+            <!--每一个item-->
+            <!--使用block的原因，block不属于真实标签，可以使页面结构更清晰-->
+            <block wx:for="{{traceabilityList}}" wx:key="unique">
+                <view class="traceability-item" bindtap="goTraceabilityDetail" data-item="{{item}}">
+                    <oss-img class="ti-img"
+                             mode="aspectFill"
+                             src="{{item.coverPicture}}"
+                             data-src="{{item.coverPicture}}"/>
+                    <!--<image class="ni-img"
+                           mode="aspectFill"
+                           src="{{item.coverPicture}}"
+                           data-src="{{item.coverPicture}}"/>-->
+                    <block wx:if="{{item.status === 0}}">
+                        <view class="ti-label">已结束</view>
+                    </block>
+                    <block wx:if="{{item.status === 1}}">
+                        <view class="ti-label" wx:if="{{item.approveStatus === 1}}">审核通过</view>
+                        <view class="ti-label" wx:if="{{item.approveStatus === 0}}">审核中</view>
+                        <view class="ti-label" wx:if="{{item.approveStatus === -1}}">审核拒绝</view>
+                    </block>
+                </view>
+            </block>
+            <wxc-loadmore wx:if="{{requestLoading}}" text="加载中..." icon="{{true}}"/>
+            <wxc-loadmore wx:if="{{traceabilityList.length > 0 && !hasMore}}" is-end="{{true}}" text="到底啦~"/>
+        </view>
+    </block>
+</view>

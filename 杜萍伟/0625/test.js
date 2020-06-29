@@ -97,6 +97,7 @@ Page({
           for (let item of newList) {
             // 此处使用循环而不使用 concat 的原因是：有些新数据需要在此进行处理
             // 例如：日期的格式化、文字的拼接、字符串转array、数值计算 等等
+            // methods
             oldList.push(item)
           }
           this.setData({
@@ -128,17 +129,6 @@ Page({
         /* 无论成功、失败都需要进行的处理 end */
       })
   },
-  /*
-   * 加载更多
-   */
-  loadMore() {
-    // 首选判断请求中，在判断是否有下一页，去除无用请求
-    if (requesting || !this.data.hasMore) {
-      return
-    }
-    page++
-    this.findMsgList()
-  },
   /**
    * 转溯源详情
    * @param e
@@ -155,6 +145,17 @@ Page({
    */
   onReachBottom() {
     this.loadMore()
+  },
+  /*
+   * 加载更多
+   */
+  loadMore() {
+    // 首选判断请求中，在判断是否有下一页，去除无用请求
+    if (requesting || !this.data.hasMore) {
+      return
+    }
+    page++
+    this.findMsgList()
   },
   /**
    * 生命周期函数--监听页面加载

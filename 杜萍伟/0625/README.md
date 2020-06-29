@@ -57,7 +57,7 @@
 ## 4、小程序小技巧
 
 ### ① 多表单类型的写法
-> 对于多输入框的bindinput绑定，可以配合使用date-name，避免写一堆重复性的时间
+> 对于多输入框的bindinput绑定，可以配合使用data-name，避免写一堆重复性的时间
 ```
 bindinput="inputChange"
 inputChange(e){

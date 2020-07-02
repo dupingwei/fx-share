@@ -11,6 +11,12 @@
   "license": "ISC",
   "devDependencies": {
     "@vuepress/plugin-active-header-links": "^1.5.2",
+    "husky": "^4.2.5",
     "vuepress": "^1.5.2"
+  },
+  "husky": {
+    "hooks": {
+        "pre-push": "sh deploy.sh"
+    }
   }
 }

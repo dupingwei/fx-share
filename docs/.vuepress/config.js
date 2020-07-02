@@ -1,11 +1,12 @@
 module.exports = {
-  title: '分享会记录',
+  title: 'Bonze',
   description: '分享会记录-描述',
   base: '/fx-share/',
   themeConfig: {
+    logo: '/logo.jpg',
     search: true,
     searchMaxSuggestions: 10,
-    lastUpdated: 'Last Updated',
+    lastUpdated: '上次更新',
     nav: [
       { text: 'Home', link: '/' },
       { text: '分享', link: '/share/' },

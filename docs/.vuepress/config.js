@@ -1,4 +1,9 @@
 module.exports = {
+  locales: {
+    '/': {
+      lang: 'zh-CN', // 将会被设置为 <html> 的 lang 属性
+    },
+  },
   title: 'Bonze',
   description: '分享会记录-描述',
   base: '/fx-share/',

@@ -16,7 +16,8 @@
   },
   "husky": {
     "hooks": {
-        "pre-push": "sh deploy.sh"
+      "pre-commit": "npm run build",
+      "pre-push": "sh deploy.sh"
     }
   }
 }

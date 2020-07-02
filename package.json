@@ -1,0 +1,16 @@
+{
+  "name": "vuepress-demo-01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vuepress/plugin-active-header-links": "^1.5.2",
+    "vuepress": "^1.5.2"
+  }
+}

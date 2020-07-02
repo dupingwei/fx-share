@@ -1,8 +1,8 @@
-## 虚拟列表
+# 虚拟列表相关原理
 
 > 以单行单列举例
 
-```
+``` text
 scrollTop：页面滚动距离
 boxCount：预计数量
 realItemCount：渲染数量
@@ -43,7 +43,7 @@ prevScrollTop ： 上一次的页面滚动距离，初始为0
 在scrollTop 小于 prevScrollTop 且大于 prevScrollTop - itemHeight  的时候，去给顶部添加添加额外的真实节点，并销毁底部的一个节点，重新给 firstTop 赋值。（节流原理同上）
 ```
 
-参考地址：
+### 参考地址
 
 #### 推荐 1
 

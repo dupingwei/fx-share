@@ -1,8 +1,8 @@
 module.exports = {
   title: '分享会记录',
   description: '分享会记录-描述',
+  base: '/fx-share/',
   themeConfig: {
-    base: '/fx-share/',
     search: true,
     searchMaxSuggestions: 10,
     lastUpdated: 'Last Updated',
